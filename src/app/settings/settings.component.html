@@ -1,0 +1,30 @@
+
+<section fxLayout="row">
+
+  <mat-nav-list fxFlex="0 0 auto">
+
+    <a mat-list-item routerLink="profile" routerLinkActive="active">
+      <mat-icon matListIcon>account_box</mat-icon>
+      <span fxHide.lt-sm>Profile</span>
+    </a>
+    
+    <a mat-list-item routerLink="account" routerLinkActive="active">
+      <mat-icon matListIcon>lock</mat-icon>
+      <span fxHide.lt-sm>Account</span>
+    </a>
+
+    <a mat-list-item (click)="auth.disconnect()">
+      <mat-icon matListIcon>exit_to_app</mat-icon>
+      <span fxHide.lt-sm>SignOut</span>
+    </a>
+
+  </mat-nav-list>
+
+  <mat-divider [vertical]="true"></mat-divider>
+
+  <div fxFlex="1 1 auto" class="margins">
+    <router-outlet></router-outlet>
+  </div>
+
+</section>
+

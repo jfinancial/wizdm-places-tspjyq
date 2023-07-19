@@ -1,0 +1,48 @@
+
+<div fxLayout="column" fxLayoutGap="16px">
+
+  <h2>Account</h2>
+
+  <mat-divider></mat-divider>
+
+  <p>Your account has been created on <b>{{ created | date }}</b>.</p>
+
+  <h2>Verify email</h2>
+
+  <mat-divider></mat-divider>
+
+  <p>Your email {{ emailVerified ? 'is already verified' : 'is not verified yet. Please proceed at your convenience' }}.</p>
+
+  <button mat-stroked-button color="primary" [disabled]="emailVerified" (click)="sendEmailVerification()" fxFlexAlign="start">
+    Verify your email
+  </button>
+
+  <h2>Change email / password</h2>
+
+  <mat-divider></mat-divider>
+
+  <p>This will change the credentials used for signin-in.</p>
+
+  <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px"> 
+
+    <button mat-stroked-button color="primary" (click)="changeEmail()">
+      Change your email
+    </button>
+
+    <button mat-stroked-button color="primary" (click)="changePassword()">
+      Change your password
+    </button>
+
+  </div>
+
+  <h2>Delete account</h2>
+
+  <mat-divider></mat-divider>
+
+  <p>By proceeding you'll permanently delete all your data.</p>
+
+  <button mat-stroked-button color="warn" (click)="deleteAccount()" fxFlexAlign="start">
+    Delete your account
+  </button>
+
+</div>
